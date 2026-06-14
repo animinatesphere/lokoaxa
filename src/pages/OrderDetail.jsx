@@ -36,21 +36,21 @@ const OrderDetail = () => {
 
   return (
     <DashboardLayout>
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-4 sm:gap-6 px-3 sm:px-0">
         {/* Back Button */}
-        <Link to="/orders" className="flex items-center gap-2 text-purple-600 hover:text-purple-700 w-max">
-          <ArrowLeft size={20} />
+        <Link to="/orders" className="flex items-center gap-2 text-purple-600 hover:text-purple-700 w-max text-sm sm:text-base">
+          <ArrowLeft size={18} className="sm:w-5 sm:h-5" />
           <span className="font-medium">Back to Orders</span>
         </Link>
 
         {/* Order Header */}
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-          <div className="flex justify-between items-start mb-4">
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">Order #{order.id}</h1>
-              <p className="text-gray-500 text-sm">Placed on {order.date}</p>
+        <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-gray-100">
+          <div className="flex flex-col sm:flex-row justify-between sm:items-start gap-2 sm:gap-4 mb-4">
+            <div className="min-w-0">
+              <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Order #{order.id}</h1>
+              <p className="text-gray-500 text-xs sm:text-sm">Placed on {order.date}</p>
             </div>
-            <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
+            <span className=\"px-3 sm:px-4 py-2 bg-green-100 text-green-700 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap\">
               {order.status}
             </span>
           </div>

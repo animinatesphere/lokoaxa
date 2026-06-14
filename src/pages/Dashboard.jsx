@@ -38,7 +38,9 @@ const ProductCard = ({ product }) => (
 
     <div>
       <div className="flex justify-between items-center mb-1">
-        <h3 className="text-[#6C666E] font-normal inter  text-sm">{product.name}</h3>
+        <h3 className="text-[#6C666E] font-normal inter  text-sm">
+          {product.name}
+        </h3>
         <div className="flex items-center gap-1">
           <span className="text-gray-600 text-xs font-medium">
             {product.rating}
@@ -74,9 +76,9 @@ const Dashboard = () => {
 
   return (
     <DashboardLayout>
-      <div className="flex flex-col gap-8 pb-12">
+      <div className="flex flex-col gap-6 sm:gap-8 pb-12">
         {/* Hero Banner */}
-        <div className="w-full h-[320px] rounded-3xl overflow-hidden relative flex bg-gradient-to-r from-[#D4BEE4] via-[#E9D9F2] to-white">
+        <div className="w-full h-48 sm:h-64 lg:h-80 rounded-2xl sm:rounded-3xl overflow-hidden relative flex bg-gradient-to-r from-[#D4BEE4] via-[#E9D9F2] to-white">
           <div className="absolute inset-0 flex">
             <div className="w-1/2 bg-[#D4BEE4] skew-x-12 -ml-10"></div>
             <div className="w-1/2 bg-white skew-x-12"></div>
@@ -143,7 +145,6 @@ const Dashboard = () => {
 
         {/* Best deal For You */}
         <div className="flex flex-col gap-4 mt-4">
-      
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {mockProducts.map((product) => (
               <ProductCard key={`deal-${product.id}`} product={product} />

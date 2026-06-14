@@ -49,34 +49,34 @@ const Orders = () => {
 
   return (
     <DashboardLayout>
-      <div className="flex flex-col gap-8 pb-12">
+      <div className="flex flex-col gap-6 sm:gap-8 pb-12">
         {/* Header */}
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-1">Purchase History</h1>
+        <div className="px-3 sm:px-0">
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1">Purchase History</h1>
         </div>
 
         {/* Orders List */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-3 sm:gap-4 px-3 sm:px-0\">
           {orders.map((order) => (
             <Link
               key={order.id}
               to={`/order/${order.id}`}
-              className="flex items-center gap-4 p-6 bg-white border border-gray-200 rounded-2xl hover:shadow-md transition-shadow cursor-pointer"
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 p-3 sm:p-6 bg-white border border-gray-200 rounded-2xl hover:shadow-md transition-shadow cursor-pointer"
             >
               {/* Product Image */}
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 w-full sm:w-auto">
                 <img
                   src={order.image}
                   alt="Order item"
-                  className="w-24 h-24 rounded-lg object-cover"
+                  className="w-full sm:w-24 h-24 rounded-lg object-cover"
                 />
               </div>
 
               {/* Order Details */}
-              <div className="flex-1">
-                <h3 className="text-gray-900 font-semibold mb-2">Order {order.orderNumber}</h3>
-                <p className="text-gray-500 text-sm">
-                  <svg className="inline mr-1" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <div className="flex-1 min-w-0 w-full">
+                <h3 className="text-gray-900 font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Order {order.orderNumber}</h3>
+                <p className="text-gray-500 text-xs sm:text-sm flex flex-wrap gap-1">
+                  <svg className="inline w-3 h-3 sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <circle cx="12" cy="12" r="1"/><path d="M12 1v22M4.22 4.22l15.56 15.56M1 12h22M4.22 19.78l15.56-15.56"/>
                   </svg>
                   {order.date} • {order.itemCount} • <span className="font-semibold text-gray-900">{order.price}</span>
@@ -84,12 +84,12 @@ const Orders = () => {
               </div>
 
               {/* Status Badge */}
-              <div className={`flex items-center gap-2 px-4 py-2 rounded-lg ${getStatusColor(order.status)}`}>
-                <span className="text-sm font-medium">{order.status}</span>
+              <div className={`flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-2 rounded-lg ${getStatusColor(order.status)} flex-shrink-0`}>
+                <span className="text-xs sm:text-sm font-medium whitespace-nowrap\">{order.status}</span>
               </div>
 
               {/* Chevron */}
-              <ChevronRight size={20} className="text-gray-400 flex-shrink-0" />
+              <ChevronRight size={18} className=\"text-gray-400 flex-shrink-0 hidden sm:block\" />
             </Link>
           ))}
         </div>

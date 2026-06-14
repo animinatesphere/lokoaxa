@@ -24,24 +24,24 @@ const Profile = () => {
 
   return (
     <DashboardLayout>
-      <div className="flex flex-col gap-8 max-w-2xl">
+      <div className="flex flex-col gap-6 sm:gap-8 max-w-2xl mx-auto px-3 sm:px-0">
         {/* Personal Info Header */}
         <div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-6">
+          <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">
             Personal Info
           </h2>
         </div>
 
         {/* User Profile Card */}
-        <div className="flex items-center gap-4 pb-6 border-b border-gray-200">
-          <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-gray-200">
+          <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
             OG
           </div>
-          <div>
-            <h3 className="text-lg font-semibold text-gray-900">
+          <div className="min-w-0">
+            <h3 className="text-base sm:text-lg font-semibold text-gray-900">
               Oncoh Gamme
             </h3>
-            <p className="text-sm text-gray-600">
+            <p className="text-xs sm:text-sm text-gray-600">
               Fashion Enthusiast & Style Curator
             </p>
             <p className="text-xs text-gray-500">Registered: 2 years ago</p>
@@ -49,10 +49,10 @@ const Profile = () => {
         </div>
 
         {/* Form Fields */}
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {/* First Name */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
               First Name
             </label>
             <input
@@ -60,13 +60,13 @@ const Profile = () => {
               name="firstName"
               value={formData.firstName}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-50"
+              className="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-50 text-sm"
             />
           </div>
 
           {/* Email Address */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
               Email Address
             </label>
             <input
@@ -74,13 +74,13 @@ const Profile = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-50"
+              className="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-50 text-sm"
             />
           </div>
 
           {/* Address */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
               Address
             </label>
             <input
@@ -88,13 +88,13 @@ const Profile = () => {
               name="address"
               value={formData.address}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-50"
+              className="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-50 text-sm"
             />
           </div>
 
           {/* Phone Number */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
               Phone Number
             </label>
             <input
